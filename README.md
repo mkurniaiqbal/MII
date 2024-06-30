@@ -1,3 +1,7 @@
+## Cara run project melalui url
+disini saya menggunakan github pages untuk deploy sehingga project ini bisa di liat tanpa di clone terlebih dahulu, di bawah ini saya lampirkan urlnya.
+- https://mkurniaiqbal.github.io/MII/
+
 ## Cara run project di lokal
 Disini saya menggunakan angular versi 16
 dan cara menjalankan di lokal kalian yaitu pertama"
