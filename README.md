@@ -12,6 +12,6 @@ Saya menginstall beberapa package
  - alert = npm install sweetalert2
  - css(boostrap) = npm install boostrap
  - icon(boostrap) = npm install boostrap-icon
--- chart.js npm install chart.js
+ - chart = npm install chart.js
 
 =================================================================================================================
