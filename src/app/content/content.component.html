@@ -1,0 +1,61 @@
+<div>
+  <div class="row justify-content-center">
+    <button
+      class="btn btn-primary rounded-0"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      (click)="addDataModal()"
+    >
+      Add Data
+    </button>
+  </div>
+  <div class="row justify-content-center mt-5" *ngIf="loading">
+    <div
+      class="spinner-border text-primary"
+      style="width: 6rem; height: 6rem"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div *ngFor="let item of data" class="col-auto mb-2 mt-2">
+      <div class="card border-info" style="width: 18rem">
+        <div class="card-header text-bg-success">{{ item.title }}</div>
+        <div class="card-body">
+          <p class="card-text">{{ item.body }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <div>
+            <button class="btn" (click)="handleDelete(item.id)">
+              <i class="bi bi-trash text-danger"></i>
+            </button>
+          </div>
+          <div>
+            <button class="btn" (click)="openModal(item)">
+              <i class="bi bi-eye text-primary"></i>
+            </button>
+            <button class="btn" (click)="editDataModal(item)">
+              <i class="bi bi-pencil-fill text-primary"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+
+  <app-modal
+    [showModalView]="showModalView"
+    [dataView]="dataView"
+    (closeModal)="closeModal($event)"
+  ></app-modal>
+
+  <app-add-modal
+    [dataEdit]="dataEdit"
+    [showModalAdd]="showModalAdd"
+    (closeAddModal)="closeAddModal($event)"
+  ></app-add-modal>
+</div>
